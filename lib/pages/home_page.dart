@@ -8,67 +8,122 @@ class _HomePageState extends State<HomePage>{
   int count=0;
   @override
   Widget build(BuildContext context)=>Scaffold(
-    appBar:AppBar(
-      centerTitle:true,
+    appBar: AppBar(
+      title:Text('Task3',style:TextStyle(fontSize:30),),
       actions:[
-        Icon(Icons.security,),
-        Icon(Icons.notifications),
-        SizedBox(width:20,),
+        Icon(Icons.book),
+        SizedBox(width:20),
       ],
-      title:Text('AppBar',style:TextStyle(color:Colors.black,fontSize:25),),
+      centerTitle:true,
     ),
-    body:Center(
-      child:Column(
-        children:[
-          Spacer(),
-          Text('Welcome to Home ${count}',style: TextStyle(fontSize:30,fontWeight:FontWeight.bold),),
-          FlatButton(
-            child:Text('Reset'),
-            color:Colors.green,
-            onPressed:(){
-              setState(()=>count=0);
-            }
+    body:Container(
+      padding:EdgeInsets.all(10),
+      color:Colors.white,
+      child:Container(
+        padding:EdgeInsets.all(6),
+        color:Colors.blue,
+        child:Container(
+          padding:EdgeInsets.all(6),
+          color:Colors.white,
+          child:Column(
+            mainAxisAlignment:MainAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children:[
+              Container(
+                child:Text('Column',style:TextStyle(color:Colors.blue,fontSize:20,fontWeight:FontWeight.bold,),)
+              ),
+              SizedBox(height:6,),
+             Expanded(
+               flex:1,
+               child:Container(
+                padding:EdgeInsets.all(6),
+                color:Colors.black,
+                child:Container(
+                  padding:EdgeInsets.all(8),
+                  child:Text('Fixed height container',style:TextStyle(color:Colors.black,fontSize:20,fontWeight:FontWeight.bold,)),
+                  color:Colors.white,
+                ),
+               ),
+              ),
+              SizedBox(height:6,),
+              Expanded(
+                flex:4,
+                child:Container(
+                padding:EdgeInsets.all(6),
+                color:Colors.deepPurple,
+                child:Container(
+                  padding:EdgeInsets.all(6),
+                  color:Colors.white,
+                  child:Row(
+                    children:[
+                      Expanded(
+                        flex:2,
+                        child:Column(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          crossAxisAlignment: CrossAxisAlignment.stretch,
+                          children:[
+                            Expanded(
+                              flex:2,
+                              child:Container(
+                                padding:EdgeInsets.all(10),
+                                color:Colors.white,
+                                child:Text('Row',style:TextStyle(fontSize: 20,color:Colors.deepPurple,fontWeight:FontWeight.bold,)),
+                              ),
+                            ),
+                            SizedBox(height: 6,),
+                            Expanded(
+                              flex:16,
+                              child:Container(
+                                padding:EdgeInsets.all(6),
+                                color:Colors.red,
+                                child:Container(
+                                  padding:EdgeInsets.all(20),
+                                  color:Colors.white,
+                                  child:Column(
+                                    mainAxisAlignment:MainAxisAlignment.center,
+                                    crossAxisAlignment:CrossAxisAlignment.start,
+                                    children:[
+                                      Text('Expanded\nchart',style:TextStyle(color:Colors.red,fontWeight:FontWeight.bold,fontSize:20,),),
+                                    ],
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                      SizedBox(width: 6,),
+                      Expanded(
+                        flex:1,
+                        child:Container(
+                          padding:EdgeInsets.all(6),
+                          color:Colors.black,
+                          child:Container(
+                            padding:EdgeInsets.all(6),
+                            color:Colors.white,
+                            child:Column(
+                              mainAxisAlignment:MainAxisAlignment.start,
+                              crossAxisAlignment:CrossAxisAlignment.start,
+                              children:[
+                                Text('Fixed\nwidth\ncontainer',style:TextStyle(fontSize:20,fontWeight:FontWeight.bold,color:Colors.black,),),
+
+                              ],
+                            ),
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+              ),
+            ],
+
           ),
-          Spacer(),
-        ],
+        ),
       ),
     ),
-   floatingActionButton: Row(
-     children:[
-       Spacer(),
-       FloatingActionButton(
-         elevation:10.0,
-         child:Icon(Icons.reset_tv),
-         onPressed:(){
-           setState((){
-             count=0;
-           });
-         },
-       ),
-       Spacer(),
-       FloatingActionButton(
-         elevation:10.0,
-         child:Icon(Icons.add),
-         onPressed:(){
-           setState((){
-             count++;
-           });
-         },
-       ),
-       Spacer(),
-     ],
-   ),
   );
 }
-// class Page extends StatefulWidget {
-//   @override
-//   _PageState createState() => _PageState();
-// }
-//
-// class _PageState extends State<Page> {
-//   @override
-//   Widget build(BuildContext context) {
-//     return Container();
-//   }
-// }
+
 
